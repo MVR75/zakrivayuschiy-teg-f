@@ -24,14 +24,14 @@
 
 .header__logo {
   margin-block-end: 20px;
-  font-family: var(--accent-font, 'PressStart2P'), sans-serif;
+  font-family: var(--accent-font, 'PressStart2P'), fantasy;
   font-weight: 400;
   font-size: clamp(3.0625rem, 1.9087rem + 4.9231vw, 4.0625rem);
   text-transform: uppercase;
 }
 
 .header__title {
-  font-family: var(--accent-font, 'PressStart2P'), sans-serif;
+  font-family: var(--accent-font, 'PressStart2P'), fantasy;
   font-weight: 400;
   font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
   text-transform: uppercase;
@@ -70,7 +70,7 @@
   position: absolute;
   z-index: 1;
   opacity: 50%;
-  font-family: var(--accent-font, 'PressStart2P'), sans-serif;
+  font-family: var(--accent-font, 'PressStart2P'), fantasy;
   font-weight: 400;
   font-size: 14px;
   text-transform: uppercase;
@@ -144,7 +144,7 @@
 .card__buttons-container {
   display: flex;
   justify-content: end;
-  gap: 12px;
+  gap: 5px;
   margin-inline-end: 25px;
   margin-block-end: 25px;
 }
@@ -166,6 +166,7 @@
 
 .like-icon {
   display: block;
+  transform-origin: center;
 }
 
 .core {
@@ -228,12 +229,14 @@ body:has(.like-icon:active) .main-body {
 }
 
 .card__like-button {
-  padding: 11.5px 36px;
+  inline-size: 130px;
+  block-size: 38px;
 }
 
 .button {
   position: relative;
   border: 2px solid #000;
+  overflow: hidden;
   background-color: #fff;
   transition: box-shadow .3s ease;
   cursor: pointer;
@@ -244,7 +247,7 @@ body:has(.like-icon:active) .main-body {
   z-index: 1;
   display: block;
   color: var(--button-text-color);
-  font-family: var(--accent-font, 'PressStart2P'), sans-serif;
+  font-family: var(--accent-font, 'PressStart2P'), fantasy;
   font-weight: 400;
   font-size: 14px;
   line-height: 90%;
@@ -288,7 +291,7 @@ body:has(.like-icon:active) .main-body {
 }
 
 .modal-window__title {
-  font-family: var(--accent-font, 'PressStart2P'), sans-serif;
+  font-family: var(--accent-font, 'PressStart2P'), fantasy;
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
@@ -312,13 +315,12 @@ body:has(.like-icon:active) .main-body {
   position: absolute;
   inset: 0;
   background-color: #000;
-  transition: scale .5s ease-in-out;
-  transform-origin: left;
-  scale: 0;
+  transition: translate .5s ease-in-out;
+  translate: -100%;
 }
 
 .button:hover::after {
-  scale: 1;
+  translate: 0;
 }
 
 .button:focus {
