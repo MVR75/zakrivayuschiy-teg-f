@@ -166,7 +166,6 @@
 
 .like-icon {
   display: block;
-  transform-origin: center;
 }
 
 .core {
@@ -179,6 +178,10 @@
 
 .contour {
   transition: fill .1s linear;
+}
+
+.heart {
+  transform-origin: center;
 }
 
 .sparks {
